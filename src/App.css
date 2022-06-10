@@ -1,21 +1,11 @@
-.App {
+.app {
   text-align: center;
+  padding-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.app-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +14,116 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-description {
+  max-width: 700px;
+  margin: 20px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.clues {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+div.clues div {
+  flex-basis: 150px;
+	flex-grow: 0;
+	flex-shrink: 0;
+  height: 80px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #a9b7d4;
+  font-size: 1.3em;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+div.clues div span.field-description {
+  display: block;
+  margin-top: 30px;
+  font-size: 0.6em;
+}
+
+button {
+  background: #282c34;
+  border: 1px solid #a9b7d4;
+  color: white;
+  line-height: 50px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.search {
+  width: 200px;
+  margin: 20px auto;
+}
+
+.search input {
+  width: calc(100% - 6px);
+  height: 30px;
+  padding: 2px;
+  line-height: 30px;
+  border: 1px solid #a9b7d4;
+}
+
+.search ul.search-list {
+  margin: 3px 0px;
+  padding: 3px;
+  border: 1px solid #a9b7d4;
+}
+
+.search ul.search-list li {
+  list-style: none;
+  text-align: left;
+  padding: 5px;
+  line-height: 25px;
+}
+
+.search ul.search-list li:hover {
+  background-color: #a9b7d4;
+  cursor: pointer;
+}
+
+.answer {
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+div.tries-remaining {
+  margin-top: 20px;
+}
+
+ul.tries-list {
+  width: 200px;
+  margin: 10px auto;
+  padding: 3px;
+  text-align: left;
+}
+
+ul.tries-list li {
+  list-style: none;
+  height: 25px;
+  line-height: 25px;
+}
+
+ul.tries-list li::before {
+  content: "\25A0";
+  color: red;
+  display: inline-block;
+  width: 1em;
+  font-size: 25px;
+}
+
+ul.tries-list li.empty::before {
+  color: black;
+}
+
+ul.tries-list li.success::before {
+  color: green;
 }
