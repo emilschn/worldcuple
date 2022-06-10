@@ -16,7 +16,7 @@ class Share extends React.Component<ShareProps, ShareState> {
 
     render() {
         if (this.props.clues == 7) {
-            let sharedString:string = "My result with the daily Worldcuple: ";
+            let sharedString:string = "My daily result on http://john-coffee.ninja/worldcuple/: ";
             const nbTries:number = this.props.tries.length;
             for (let i:number = 0; i < nbTries; i++) {
                 switch (this.props.tries[i]) {

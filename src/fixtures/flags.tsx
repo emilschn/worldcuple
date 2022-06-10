@@ -4,7 +4,9 @@ interface Flags {
 
 const flags: Flags = {
     AR: "🇦🇷",
+    BE: "🇧🇪",
     BR: "🇧🇷",
+    CM: "🇨🇲",
     CZ: "🇨🇿",
     DE: "🇩🇪",
     EN: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -13,7 +15,8 @@ const flags: Flags = {
     HR: "🇭🇷",
     IT: "🇮🇹",
     NL: "🇳🇱",
-    TG: "🇹🇬"
+    TG: "🇹🇬",
+    ZA: "🇿🇦",
 };
 
 export default flags;
