@@ -32,7 +32,7 @@ div.clues div {
   flex-basis: 150px;
 	flex-grow: 0;
 	flex-shrink: 0;
-  height: 80px;
+  height: 100px;
   padding: 20px;
   margin: 10px;
   border: 1px solid #a9b7d4;
@@ -55,12 +55,12 @@ button {
   border: 1px solid #a9b7d4;
   color: white;
   line-height: 50px;
-  width: 200px;
+  width: 300px;
   cursor: pointer;
 }
 
 .search {
-  width: 200px;
+  width: 300px;
   margin: 20px auto;
 }
 
@@ -70,6 +70,7 @@ button {
   padding: 2px;
   line-height: 30px;
   border: 1px solid #a9b7d4;
+  font-size: 1.1em;
 }
 
 .search ul.search-list {
@@ -126,4 +127,26 @@ ul.tries-list li.empty::before {
 
 ul.tries-list li.success::before {
   color: green;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .app-description {
+    width: calc(100% - 40px);
+    margin: 20px;
+  }
+
+  div.clues div {
+    height: 80px;
+    padding: 10px;
+  }
+
+  div.clues div span.field-description {
+    margin-top: 10px;
+  }
+
+  .search {
+    width: calc(100% - 40px);
+  }
 }

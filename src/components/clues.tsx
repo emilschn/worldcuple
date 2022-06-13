@@ -14,9 +14,6 @@ class Clues extends React.Component<CluesProps> {
         return(
             <div className="field field-birthdate" title="birthday">
                 🎂 {birth.toDateString()}
-                <br></br>
-                <br></br>
-                <br></br>
                 <span className="field-description">Birthday</span>
             </div>
         )
@@ -42,9 +39,6 @@ class Clues extends React.Component<CluesProps> {
             return(
                 <div className="field field-position" title={ this.props.player.position }>
                     {position}
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <span className="field-description">Position</span>
                 </div>
             )
@@ -56,9 +50,6 @@ class Clues extends React.Component<CluesProps> {
             return(
                 <div className="field field-selections" title="selections">
                     🏅 {this.props.player.selections}
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <span className="field-description">Nb of selections</span>
                 </div>
             )
@@ -70,9 +61,6 @@ class Clues extends React.Component<CluesProps> {
             return(
                 <div className="field field-goals" title="goals in selection">
                     ⚽ {this.props.player.goals}
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <span className="field-description">Nb of goals with selection</span>
                 </div>
             )
@@ -84,9 +72,6 @@ class Clues extends React.Component<CluesProps> {
             return(
                 <div className="field field-nation" title="nation">
                     {flags[ this.props.player.nation ]}
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <span className="field-description">Flag of the nation</span>
                 </div>
             )
@@ -98,9 +83,6 @@ class Clues extends React.Component<CluesProps> {
             return(
                 <div className="field field-club" title="main club">
                     👕 {this.props.player.mainClub}
-                    <br></br>
-                    <br></br>
-                    <br></br>
                     <span className="field-description">Main club</span>
                 </div>
             )

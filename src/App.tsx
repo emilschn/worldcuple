@@ -47,7 +47,7 @@ class App extends React.Component<AppProps, AppState> {
     return(
       <div className="app">
         <header className="app-header">
-          Worldcuple
+          Worldcuple 🏆
         </header>
         <div className="app-description">With 6 clues, find 1 football player that has played during a World Cup</div>
         <Clues player={this.state.currentPlayer} clues={this.state.nbClues} />
@@ -70,6 +70,7 @@ class App extends React.Component<AppProps, AppState> {
   handleSearchClick(playerName:string) {
     let newNbClues = this.state.nbClues + 1;
     if (playerName == this.state.currentPlayer.name) {
+      alert('Well done!');
       newNbClues = 7;
     }
 

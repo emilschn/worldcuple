@@ -16,7 +16,7 @@ class Share extends React.Component<ShareProps, ShareState> {
 
     render() {
         if (this.props.clues == 7) {
-            let sharedString:string = "My daily result on http://john-coffee.ninja/worldcuple/: ";
+            let sharedString:string = "My daily result on Woldcuple: ";
             const nbTries:number = this.props.tries.length;
             for (let i:number = 0; i < nbTries; i++) {
                 switch (this.props.tries[i]) {
@@ -32,7 +32,19 @@ class Share extends React.Component<ShareProps, ShareState> {
                 }
             }
             return(
-                <button onClick={ () => { this.setState({buttonLabel: 'Result copied!'}); navigator.clipboard.writeText( sharedString ) }}>
+                <button onClick={ 
+                    () => {
+                        if (navigator.share) {
+                            navigator.share({
+                                title: 'Worldcuple',
+                                text: sharedString,
+                                url: 'http://john-coffee.ninja/worldcuple/',
+                            });
+                        } else {
+                            this.setState({buttonLabel: 'Result copied!'});
+                            navigator.clipboard.writeText( sharedString );
+                        }
+                    }}>
                     { this.state.buttonLabel }
                 </button>
             )

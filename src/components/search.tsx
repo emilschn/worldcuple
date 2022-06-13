@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import searchList from '../fixtures/search';
 
 type SearchProps = {
@@ -12,10 +12,11 @@ class Search extends React.Component<SearchProps, SearchState> {
     state: SearchState = {
         inputText: ''
     };
+    inputRef: RefObject<HTMLDivElement> = React.createRef();
 
     renderSearchBox() {
         return(
-            <input type="text" value={this.state.inputText} onChange={ (e) => this.handleChange(e) } placeholder="Search for a player" />
+            <input type="text" value={this.state.inputText} onChange={ (e) => this.handleChange(e) } onFocus={ this.handleFocus() } placeholder="Search for a player" />
         )
     }
 
@@ -42,7 +43,7 @@ class Search extends React.Component<SearchProps, SearchState> {
 
     render() {
         return(
-            <div className="search">
+            <div className="search" ref={ this.inputRef }>
                 { this.renderSearchBox() }
                 { this.renderSearchList() }
             </div>
@@ -60,7 +61,12 @@ class Search extends React.Component<SearchProps, SearchState> {
         this.setState({
             inputText: ''
         });
-    } 
+    }
+
+    handleFocus() {
+        this.inputRef.current?.scrollIntoView();
+        return undefined;
+    }
 }
 
 export default Search;
